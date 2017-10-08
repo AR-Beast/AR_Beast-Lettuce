@@ -345,7 +345,7 @@ CHECKFLAGS     := -D__linux__ -Dlinux -D__STDC__ -Dunix -D__unix__ \
 CFLAGS_MODULE   = -O3 -Ofast  $(GRAPHITE)
 AFLAGS_MODULE   = -O3 -Ofast $(GRAPHITE)
 LDFLAGS_MODULE  = -O3 -Ofast --strip-debug 
-CFLAGS_KERNEL	= $(GRAPHITE) -Ofast -O3 -Ofast -fmodulo-sched -fmodulo-sched-allow-regmoves -ftree-loop-vectorize -ftree-loop-distribute-patterns -ftree-slp-vectorize -fvect-cost-model -ftree-partial-pre -fgcse-after-reload -fgcse-lm -fgcse-sm -fsched-spec-load -ffast-math -fsingle-precision-constant -fpredictive-commoning fno-graphite  -fno-graphite-identity -fno-loop-flatten -fno-tree-loop-linear -fno-loop-interchange -fno-loop-strip-mine  -fno-loop-block  -fno-loop-nest-optimize -fno-loop-unroll-and-jam -fno-loop-parallelize-all -ftree-parallelize-loops=0 -fno-openmp -Wno-unused-function
+CFLAGS_KERNEL	= $(GRAPHITE) -Ofast -O3 -Ofast -fmodulo-sched -fmodulo-sched-allow-regmoves -ftree-loop-vectorize -ftree-loop-distribute-patterns -ftree-slp-vectorize -fvect-cost-model -ftree-partial-pre -fgcse-after-reload -fgcse-lm -fgcse-sm -fsched-spec-load -ffast-math -fsingle-precision-constant -fpredictive-commoning fno-graphite  -fno-graphite-identity -fno-loop-flatten -fno-tree-loop-linear -fno-loop-interchange -fno-loop-strip-mine  -fno-loop-block  -fno-loop-nest-optimize -fno-loop-parallelize-all -ftree-parallelize-loops=0 -fno-openmp -Wno-unused-function
 AFLAGS_KERNEL	= -O3 -Ofast $(GRAPHITE) 
 CFLAGS_GCOV	= -fprofile-arcs -ftest-coverage
 
@@ -602,7 +602,7 @@ KBUILD_CFLAGS   += $(call cc-option,-fno-store-merging,)
 ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
 KBUILD_CFLAGS	+= -Os
 else
-KBUILD_CFLAGS	+= -O3 -Ofast -funswitch-loops -fpredictive-commoning -fgcse-after-reload -ftree-vectorize -ftree-loop-distribute-patterns -fsplit-paths -fvect-cost-model -ftree-partial-pre -fpeel-loops
+KBUILD_CFLAGS	+= -O3 -Ofast -funswitch-loops -fpredictive-commoning -fgcse-after-reload -ftree-vectorize -ftree-loop-distribute-patterns -fvect-cost-model -ftree-partial-pre -fpeel-loops
 endif
 
 include $(srctree)/arch/$(SRCARCH)/Makefile
